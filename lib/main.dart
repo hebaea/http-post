@@ -43,7 +43,7 @@ Future<UserModel?> createUser(String name, String jobTitle) async {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late UserModel _user;
+   UserModel _user = UserModel() ;
   // Future<UserModel>? _user;
 
   final TextEditingController nameController = TextEditingController();
@@ -69,10 +69,10 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 32,
             ),
             // ignore: unnecessary_null_comparison
-            _user == null
-                ? Container()
-                : Text(
-                    "The user ${_user.name}, ${_user.id} is created successfully at time ${_user.createdAt.toIso8601String()}"),
+            _user.id != null
+                ? Text(
+                    "The user ${_user.name}, ${_user.id} is created successfully at time ${_user.createdAt!.toIso8601String()}")
+                : SizedBox()
           ],
         ),
       ),

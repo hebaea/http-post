@@ -5,16 +5,16 @@ UserModel userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
 String userModelToJson(UserModel data) => json.encode(data.toJson());
 
 class UserModel {
-  String name;
-  String job;
-  String id;
-  DateTime createdAt;
+  String? name;
+  String? job;
+  String? id;
+  DateTime? createdAt;
 
   UserModel({
-    required this.name,
-    required this.job,
-    required this.id,
-    required this.createdAt,
+    this.name,
+    this.job,
+    this.id,
+    this.createdAt,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
@@ -28,6 +28,6 @@ class UserModel {
         "name": name,
         "job": job,
         "id": id,
-        "createdAt": createdAt.toIso8601String(),
+        "createdAt": createdAt!.toIso8601String(),
       };
 }
