@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _user.id != null
                 ? Text(
                     "The user ${_user.name}, ${_user.id} is created successfully at time ${_user.createdAt!.toIso8601String()}")
-                : SizedBox()
+                : SizedBox.shrink()
           ],
         ),
       ),
